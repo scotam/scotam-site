@@ -1,0 +1,67 @@
+<div class="clearfix"></div>
+<section id="ban4">
+	<div class="container">
+		<div class="row"> 
+        <img src="{{ assets:page_banner limit='1' }}{{ url }}{{ /assets:page_banner }}" class="banner-bg img-responsive" alt="{{ title }}" />
+      </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<section id="logo">
+	<div class="container wrap pp">
+      	<div class="row" style="margin:auto;">
+        	<ul class="list-inline list-unlisted">
+        		{{ collection from="partners" }}
+	          		<li class="">
+	          			<a href="javascript:void(0);" title="{{ title }}"><img src="{{ assets:upload_logo limit='1' }}{{ url }}{{ /assets:upload_logo }}" alt="{{ title }}" /></a>
+	          		</li>
+	          	{{ /collection }}
+		  </ul>
+      </div>
+    </div>	
+</section>
+
+<section id="article1" class="hide-drive pt0" style="display: block;">
+	<section id="p-detail" class="pt0">
+		<div id="fragment-1" class="container ui-tabs-panel">
+			<div class="row c-plr">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+					<!-- <a href="#" class="btn btn-success btn-log">HIDE ENTIRE LIST OF CARRIERS</a> -->
+					<a class="Show btn btn-success btn-log" id="show-carriers-list">SHOW ENTIRE LIST OF CARRIERS</a>
+					<a class="Hide btn btn-success btn-log" id="hide-carriers-list">HIDE ENTIRE LIST OF CARRIERS</a>
+				</div>
+                <div class="clearfix"></div>
+                
+					<div id="carriers-list" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pp" style="display:none;">
+				    		{{ partial:alpha_list letter="A" }}
+				    		{{ partial:alpha_list letter="B" }}
+				    		{{ partial:alpha_list letter="C" }}
+				    		{{ partial:alpha_list letter="D" }}
+				    		{{ partial:alpha_list letter="E" }}
+				    		{{ partial:alpha_list letter="F" }}
+				    		{{ partial:alpha_list letter="G" }}
+				    		{{ partial:alpha_list letter="H" }}
+				    		{{ partial:alpha_list letter="I" }}
+				    		{{ partial:alpha_list letter="J" }}
+				    		{{ partial:alpha_list letter="K" }}
+				    		{{ partial:alpha_list letter="L" }}
+				    		{{ partial:alpha_list letter="M" }}
+				    		{{ partial:alpha_list letter="N" }}
+				    		{{ partial:alpha_list letter="O" }}
+				    		{{ partial:alpha_list letter="P" }}
+				    		{{ partial:alpha_list letter="Q" }}
+				    		{{ partial:alpha_list letter="R" }}
+				    		{{ partial:alpha_list letter="S" }}
+				    		{{ partial:alpha_list letter="T" }}
+				    		{{ partial:alpha_list letter="U" }}
+				    		{{ partial:alpha_list letter="V" }}
+				    		{{ partial:alpha_list letter="W" }}
+				    		{{ partial:alpha_list letter="X" }}
+				    		{{ partial:alpha_list letter="Y" }}
+				    		{{ partial:alpha_list letter="Z" }}
+				    	</ul>
+					</div>
+			</div>
+		</div>
+	</section>
+</section>

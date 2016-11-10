@@ -1,0 +1,16 @@
+title: Default Page
+create_title: Default Page
+fields:
+  page_banner:
+    type: assets
+    display: Page Banner
+    instructions: Upload top banner
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: default-uploads
+    max_files: "1"
+  page_content:
+    type: redactor
+    display: Page Content
+    cheatsheet: false
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: default-uploads

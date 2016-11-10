@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title ensure_right=" / " }}{{ site_name }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ theme:css src='bootstrap' }}" />
+    <link href="{{ theme:css src='mytheme' }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ theme:css src='animate' }}" />
+    <link rel="icon" href="favicon.ico">
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+
+  {{ partial:nav }}
+  
+  
+    
+    {{ template_content }}
+
+
+  <div id="third2">
+    {{ partial:footer }}
+  </div> <!--#third-->
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="{{ theme:js src='jquery.localscroll.min' }}"></script>
+  <script type="text/javascript" src="{{ theme:js src='jquery.scrollTo.min' }}"></script> 
+
+  <script src="{{ theme:js src='navAccordion.min' }}" type="text/javascript"></script>
+  
+  {{ theme:js  tag="true" }}
+
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+
+        // var first_addr = $("ul#locate li.active:first").find('a').data('address');
+
+        // var embed ="<iframe width='100%' height='100%' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( first_addr ) +"&amp;output=embed'></iframe>";
+
+        // $("div#mapia").html(embed);
+
+        var counter = 0;      
+
+        $("#locate > li > a").click(function(e){
+
+          $("ul#locate > li").each(function(){
+            $(this).removeClass('active');
+          })
+
+          $(this).parent('li').addClass('active');
+
+          var address = $(this).data('address');
+
+          var embed ="<iframe width='100%' height='100%' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( address ) +"&amp;output=embed'></iframe>";
+
+
+          counter++;
+
+          $('.featherlight-close').on('click', function () {
+            counter = 0;
+          })
+
+          if( counter >= 2 ) {
+            $("#mapia").children('.featherlight').first().remove();
+            // console.log('here');
+          }
+
+          $("#mapia")
+            .children('iframe')
+            .remove()            
+            .end()
+            .append(embed);
+
+          // $("#mapia")
+          //   .children('iframe')
+          //   .remove()
+          
+          // .append(embed);
+
+          // $("#mapia").html(embed);
+
+          var business_city = $(this).data('city');
+          var business_state = $(this).data('state');
+
+          //$("ul.ul-lightbox-people li").not("[data-city='"+ business_city +"'][data-state='"+ business_state +"']").hide('slow');
+          
+          $("ul-lightbox-people li").hide('slow', function(){
+            $("ul.ul-lightbox-people li[data-city='"+ business_city +"'][data-state='"+ business_state +"']").show('slow');
+            //$("ul.ul-lightbox-people li").data('city', business_city).data('state', business_state).show();
+          });
+
+          e.preventDefault();
+
+        });
+
+        // console.log( $.featherlight.defaults.root = "#map-container" );
+        // console.log( $.featherlight.defaults );
+
+
+        $("#search-people").click(function(){
+
+          var city = $.trim($("input[name='city']").val());
+          var state = $.trim($("input[name='state']").val());
+
+          city = city != '' ? city.toLowerCase().replace(/\b[a-z]/g, function(letter) { return letter.toUpperCase(); }) : '';
+          state = state != '' ? state.toLowerCase().replace(/\b[a-z]/g, function(letter) { return letter.toUpperCase(); }): '';
+
+          // console.log(city);
+          // console.log(state);
+          if( city != '' && state != '' ){
+            $("ul.ul-lightbox-people li").hide('slow', function(){
+              $("ul.ul-lightbox-people li[data-city='"+ city +"'][data-state='"+ state +"']").show();
+            })            
+          }
+          if( city != '' && state == '' ){
+            $("ul.ul-lightbox-people li").hide('slow', function(){
+              $("ul.ul-lightbox-people li[data-city='"+ city +"']").show();
+            })            
+          }
+          if( city == '' && state != '' ){
+            $("ul.ul-lightbox-people li").hide('slow', function(){
+              $("ul.ul-lightbox-people li[data-state='"+ state +"']").show();
+            })            
+          }          
+        })
+
+        $('#show-carriers-list').click(function() {
+          $('#carriers-list').show(500);
+          $('#show-carriers-list').hide(0);
+          $('#hide-carriers-list').show(0);
+        });
+
+        $('#hide-carriers-list').click(function() {
+          $('#carriers-list').hide(500);
+          $('#show-carriers-list').show(0);
+          $('#hide-carriers-list').hide(0);
+        });
+
+        $('.toggle').click(function() {
+          $('#target').toggle('slow');
+        });
+
+      $(".dropdown-menu li a").click(function(){
+        var selText = $(this).text();
+        $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+        $('html,body').animate({scrollTop: $("#boo").offset().top}, 'slow');
+        $(".dropdown-menu li").show();
+        $(this).parents('li').hide();
+      });
+
+      $("ul#customer-do li a").click(function(){
+        var selText = $(this).text();
+        $(".dropdown-menu li a").parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+        $('html,body').animate({scrollTop: $("#boo").offset().top}, 'slow');
+        $(".dropdown-menu li").show();
+        $(this).parents('li').hide();
+      });      
+
+      $('.selectpicker ul li, ul#customer-do li').click(function() {
+        var i = $(this).index();
+        var j = i + 1;
+        $('.hide-drive').hide();
+        $('#article' + j).show();
+      });
+
+    });
+  </script>
+
+
+</body>
+</html>

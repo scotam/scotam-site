@@ -1,0 +1,56 @@
+<div class="clearfix"></div>
+<section id="ban">
+  <div class="container">
+    <div class="row"> 
+      <img src="{{ assets:banner_image }}{{ url }}{{ /assets:banner_image }}" class="banner-bg img-responsive" />
+      <div id="title" class="slide-f">
+        {{ banner_title }} 
+      </div>   
+    </div>
+  </div>
+</section>
+
+<!--/WE ARE AWESOME-->
+<section id="Sauce">
+  <div class="container">
+    <div class="row">        
+		  <div id="slide2" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wrap slide">
+        <div class="title3">
+          {{ s_title }}
+          {{ content }}
+        </div>   
+			</div>
+    </div>
+  </div>
+</section>
+<!--It's in the SAUCE-->
+
+<div id="intro">
+  <div id="scotts" class="clearfix">
+    <div class="container">
+      {{ core_employees }}
+        <div class="row w1"> 
+          <div id="slide2" class="slide">
+            <div class="{{ switch between='title wow slideInRight|title2 bg1 wow slideInLeft' }}" style="background-color:{{ background_color_code }}">
+              <h2>{{ name }}</h2>
+              <p>{{ brief }}</p>
+            </div>
+            <img src="{{ assets:upload_image }}{{ url }}{{ /assets:upload_image }}" alt="{{ name }}" class="{{ switch between='img-l img-responsive wow slideInLeft|img-r img-responsive wow slideInRight' }}" data-wow-delay="0.5s">                
+          </div>   
+        </div>
+        <div class="clearfix"></div>
+      {{ /core_employees }}
+    </div>
+
+
+    <div id="parallax-bg-3" class="parallax-bg">
+      <!--<div id="bg-3-1" style="background-image: url('{{ assets:comp_scot_am_image }}{{ url }}{{ assets:comp_scot_am_image }}')">-->
+      <div id="bg-3-1">
+        <div id="third">
+          {{ partial:footer }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div> <!--#intro-->

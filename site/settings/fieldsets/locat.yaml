@@ -1,0 +1,24 @@
+title: Locations
+create_title: locations
+hide: true
+fields:
+  page_banner:
+    type: assets
+    display: Page Banner
+    instructions: Upload Page Banner image (1500x400px)
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: default-uploads
+    max_files: 1
+    width: 50
+  image_of_section_divider:
+    type: assets
+    display: 'Background Image of Section Divider '
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: default-uploads
+    width: 50
+  section_divider_heading:
+    type: markdown
+    display: Section Divider Heading
+    cheatsheet: false
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: default-uploads

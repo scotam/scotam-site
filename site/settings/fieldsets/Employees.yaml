@@ -1,0 +1,32 @@
+title: Employees
+create_title: employees
+fields:
+  picture:
+    type: assets
+    display: Picture
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: /
+  job:
+    type: text
+    display: Job
+  address:
+    type: text
+    display: Address
+  email_address:
+    type: text
+    display: Email Address
+  phone_number:
+    type: text
+    display: Phone Number
+  biography:
+    type: markdown
+    display: Biography
+    cheatsheet: false
+  business_location:
+    type: collection
+    display: Business Location
+    collection:
+      - business-location
+    max_items: "1"
+    label: '{{ title }} '
+    mode: panes

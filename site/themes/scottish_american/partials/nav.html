@@ -1,0 +1,49 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" {{ if segment_1 != '' }}id="menu2" {{ /if }}>
+    <div class="container">
+        <div class="navbar-header">
+            
+            {{ if segment_1 == '' }}
+                <a class="navbar-brand page-scroll" href="{{ site_url }}">
+                    <img src="{{ assets:upload_site_logo }}{{ url }}{{ /assets:upload_site_logo }}" alt="{{ site_name }}" class="img-responsive">
+                </a>
+            {{ else }}
+                <a class="navbar-brand page-scroll" href="{{ site_url }}">
+                    <img src="{{ assets:upload_site_logo1 }}{{ url }}{{ /assets:upload_site_logo1 }}" alt="{{ site_name }}" class="img-responsive">
+                </a>
+            {{ /if }}
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+            
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul id="top-menu" class="nav navbar-nav navbar-right">
+                {{ nav from="/" include_home="false" scope="tag" exclude="markets|terms-of-service" }}
+                    
+                    {{if index == 2}}
+
+                        <li {{ if is_current or is_parent }}class="active"{{ /if }}>
+                            <a class="page-scroll" href="/locations-character#people">
+                                {{ tag:nav_title or title }}
+                            </a>
+                        </li>
+
+                        {{ else }}
+
+                        <li {{ if is_current or is_parent }}class="active"{{ /if }}>
+                            <a class="page-scroll" href="{{ url }}">
+                                {{ tag:nav_title or title }}
+                            </a>
+                        </li>
+                        
+                    {{ /if }}
+
+                {{ /nav }}
+            </ul>
+        </div>
+
+    </div>
+</nav>

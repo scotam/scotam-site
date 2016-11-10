@@ -1,0 +1,45 @@
+<section class="posts">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 blog-main">
+                {{ var:q is="" }}
+                {{ bloodhound:search folder="blog*" limit="4"}}
+                    {{ if no_query }}
+                        <p class="alert alert-danger text-center" role="alert">You forgot to search for something!</p>
+                    {{ elseif no_results }}
+                        <p class="alert alert-warning text-center role="alert">Couldn't find posts with "{{_query}}", sorry</p>
+                    {{ else }}
+                        <div class="blog-post">
+                            <h1 class="blog-post-title">
+                                {{ if link }}
+                                    <a href="{{ link }}">{{ title }}&nbsp;&rArr;</a>
+                                {{ else }}
+                                    <a href="{{ url }}">{{ title }}</a>
+                                {{ endif }}
+                            </h1>
+                            <p class="blog-post-meta"><a href="{{ url }}">{{ datestamp format="F jS, Y" }}</a> by <a href="#">{{author|ucfirst}}</a> {{ if categories }} in {{ categories }}{{ if last && total_results > 1 }} & {{elseif !first}}, {{/if}}<a href="/blog/categories/{{ value }}">{{ value }}</a>{{ /categories }}{{/if}} {{ if tags }} with tags {{tags}}{{ if last && total_results > 1 }} & {{elseif !first}}, {{/if}}<a href="/blog/tags/{{ value }}">{{ value }}</a>{{/tags}}{{ endif }}</p>
+                            {{ content }}
+                            <p>
+                                <a href="{{ url }}#comments">Come join the conversation!</a>
+                            </p>
+                        </div>
+                        {{ var:q is="{_query}" }}
+                    {{ /if }}
+                {{ /bloodhound:search }}
+                <div class="text-center">
+                    <ul class="pagination">
+                        {{ bloodhound:pagination folder="blog*" limit="4" }}
+                            {{ if !no_results && !no_query }}
+                                <li class="previous {{ if !previous_page }} disabled{{endif}}"><a href="{{ previous_page }}">&laquo;</a></li>
+                                {{ loop times="{ total_pages }" }}
+                                    <li {{ if index == current_page }}class="active"{{ /if }}><a href="?page={{index}}&query={{var:q }}">{{ index }}</a></li>
+                                {{ /loop }}
+                                <li class="next {{ if !next_page }} disabled{{endif}}"><a href="{{ next_page }}">&raquo;</a></li>
+                            {{ /if }}
+                        {{ /bloodhound:pagination }}
+                   </ul>
+               </div>
+            </div> <!-- blog-main -->
+        </div> <!-- row -->
+    </div>
+</section>

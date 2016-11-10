@@ -1,0 +1,4 @@
+image_manipulation_route: /assets/
+image_manipulation_secure: true
+auto_crop: true
+image_manipulation_driver: gd

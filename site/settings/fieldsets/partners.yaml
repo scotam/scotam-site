@@ -1,0 +1,10 @@
+title: Partners
+create_title: Partners
+fields:
+  upload_logo:
+    type: assets
+    display: Upload Logo
+    instructions: "Upload Partner's Logo"
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: partners-logo
+    max_files: "1"

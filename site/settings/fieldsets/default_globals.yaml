@@ -1,0 +1,18 @@
+title: Default Globals
+fields:
+  site_name:
+    type: text
+    display: Site Name
+  upload_site_logo:
+    type: assets
+    display: Upload Site Logo
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: global-image
+    max_files: 1
+  upload_site_logo1:
+    type: assets
+    display: Upload Site Logo (Inner Pages)
+    instructions: This logo will be shown over all the pages except home page.
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: global-image
+    max_files: 1

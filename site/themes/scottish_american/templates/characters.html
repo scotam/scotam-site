@@ -1,0 +1,55 @@
+<div class="clearfix"></div>
+<section id="ban2">
+	<div class="container">
+		<div class="row"> 
+			<img src="{{ assets:page_banner limit='1' }}{{ url }}{{ /assets:page_banner }}" class="banner-bg img-responsive" />
+			<div>
+				<h1><span>ACROSS THE COUNTRY</span>{{ collection from="business-location" }}{{ if index == 1 }}{{ total_results }}{{ /if }}{{ /collection }} CITIES</h1> 
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="clearfix"></div>
+<section id="filter">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12"> 
+					<div class="form-group">
+						<label for="email">FILTER BY</label>
+						<input type="text" class="form-control" id="city" name="city" placeholder="CITY" value="{{ get:city }}" />
+						<input type="text" class="form-control" id="state" name="state" placeholder="STATE" value="{{ get:state }}" />
+						<button type="button" id="search-people" class="btn btn-default">SEARCH</button>
+					</div>
+			</div>
+      	</div>
+    </div>
+</section>
+
+<section id="mangatar">
+	<div class="container wrap">
+		<div class="row" style="margin:auto;">
+			<ul class="list-inline list-unlisted ul-lightbox-people">
+				{{ collection from="employees" }}
+				<li class="left round" {{ relate:business_location }}data-city="{{ title }}" data-state="{{ relate:state }}{{ title }}{{ /relate:state }}"{{ /relate:business_location }}>
+					<a href="#" data-featherlight="#mangatar{{ index }}"><img src="{{ assets:picture }}{{ url }}{{ /assets:picture }}" alt="{{ title }}" /></a>
+					<h4>{{ title }}<span>{{ job }}</span></h4>
+					<div class="lightbox lightbox-people" id="mangatar{{ index }}">
+						<div class="people-L">
+							<img src="{{ assets:picture }}{{ url }}{{ /assets:picture }}" class="round" alt="{{ title }}" />
+						</div>
+						<div class="people-R">
+							<h1>{{ title }}</h1>
+							<h3>{{ job }}</h3>
+							{{ address }}
+							<p>{{ email_address }}</p>
+							<p>{{ phone_number }}</p>
+						</div>
+					</div>
+				</li>
+				{{ /collection }}
+			</ul>
+		</div>
+	</div>
+</section>
+

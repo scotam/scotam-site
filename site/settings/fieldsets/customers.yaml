@@ -1,0 +1,55 @@
+title: Customers
+create_title: customers
+fields:
+  page_banner:
+    type: assets
+    display: Page Banner
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: default-uploads
+    max_files: "1"
+  you_like_to_do:
+    type: grid
+    display: WHAT WOULD YOU LIKE TO DO ?
+    fields:
+      heading:
+        type: text
+        display: Heading
+        instructions: null
+        width: 33
+      background_image:
+        type: assets
+        display: Background image
+        instructions: null
+        container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+        folder: default-uploads
+        max_files: "1"
+        width: 33
+      section_url:
+        type: text
+        display: URL
+        instructions: Leave blank if no URL.
+        validate: ""
+        width: 33
+    mode: table
+  instant_quote_with_usli:
+    type: grid
+    display: Instant Quote with USLI
+    fields:
+      left_text:
+        type: redactor
+        display: Left Text
+        instructions: null
+        settings: Standard
+        container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+        folder: download-forms
+        width: 50
+      right_text:
+        type: redactor
+        display: RIght Text
+        instructions: null
+        settings: Standard
+        container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+        folder: download-forms
+        width: 50
+    mode: table
+    max_rows: "1"

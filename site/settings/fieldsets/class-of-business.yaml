@@ -1,0 +1,14 @@
+title: Class of Business
+create_title: Class of Business
+fields:
+  business_url:
+    type: text
+    display: Business URL
+    instructions: Enter full URL included with http:// or https://
+    validate: url
+  category-class-of-business:
+    type: taxonomy
+    display: 'Category - Class of Business'
+    max_items: "1"
+    taxonomy: category-class-of-business
+    mode: panes

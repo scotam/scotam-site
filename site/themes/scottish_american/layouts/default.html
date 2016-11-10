@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title ensure_right=" / " }}{{ site_name }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ theme:css src='bootstrap' }}" />
+    <link href="{{ theme:css src='mytheme' }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ theme:css src='animate' }}" />
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    
+    {{ partial:nav }}
+
+    {{ template_content }}
+
+    <script src="{{ theme:js src='wow' }}" type="text/javascript"></script>
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ theme:js src='jquery.parallax' }}"></script>
+    <script type="text/javascript" src="{{ theme:js src='jquery.localscroll.min' }}"></script>
+    <script type="text/javascript" src="{{ theme:js src='jquery.scrollTo.min' }}"></script>
+    {{ theme:js  tag="true" }}
+    <!--<script type="text/javascript">
+        jQuery(document).ready(function(){
+            
+            $(window).scroll(function(e){
+                parallaxScroll();
+            });
+
+            function parallaxScroll(){
+                var scrolled = $(window).scrollTop();
+                $('#parallax-bg-3').css('top',(0-(scrolled*.75))+'px');
+            }
+         }); 
+    </script>-->
+</body>
+</html>

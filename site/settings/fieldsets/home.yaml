@@ -1,0 +1,56 @@
+title: Home
+fields:
+  banner_title:
+    type: markdown
+    display: Banner title
+    cheatsheet: false
+  banner_image:
+    type: assets
+    display: Banner Image
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: /
+  s_title:
+    type: markdown
+    display: Middle Content Title
+    cheatsheet: false
+  content:
+    type: markdown
+    display: Middle Content
+    cheatsheet: false
+  core_employees:
+    type: grid
+    display: Core Employees
+    fields:
+      name:
+        type: text
+        display: Name
+        instructions: null
+        width: 25
+      brief:
+        type: markdown
+        display: Brief
+        instructions: null
+        cheatsheet: false
+        container: null
+        folder: null
+        width: 25
+      upload_image:
+        type: assets
+        display: Upload Image
+        instructions: null
+        container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+        folder: /
+        max_files: 1
+        width: 25
+      background_color_code:
+        type: text
+        display: Background Color Code
+        instructions: Enter background color code
+        width: 25
+    mode: table
+  comp_scot_am_image:
+    type: assets
+    display: Comp SCOT AM (Image)
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: /
+    max_files: 1

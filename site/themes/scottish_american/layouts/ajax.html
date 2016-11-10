@@ -1,0 +1,77 @@
+{% extends "_layout" %}
+
+{% block head %}
+	{{ parent() }}
+	<meta name='description' content='{{ entry.seoKeywords }}'/>
+	<meta name='keywords' content='{{ entry.seoDescription }}' />
+{% endblock %}
+
+{% block content %}
+    <main>
+        <!--.Mobi's Technology is at the Core of the Best Mobile and Web Experiences-->
+        <section class="parallax well-xl" {% if entry.bodyBackground | length %}style="background-image:url({{ entry.bodyBackground.first().getUrl }}); background-repeat: no-repeat;"{% endif %} data-mobile="true" data-speed="2" data-url="{{ entry.bodyBackground.first().getUrl }}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h1 class="text-contrast">{{ entry.heroTitle }}</h1>
+                        <div class="heading-3 text-primary">{{ entry.topSectionSubTitle }}</div>
+                        <br />
+                        {{ entry.body }}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END .Mobi's Technology is at the Core of the Best Mobile and Web Experiences-->
+
+        <section class="well-sm bg-default-variant-2">
+            <div class="container">
+                <div class="row offset-2 flow-offset-1">
+                    {% for box in entry.middleBoxes %}
+                    <div class="col-md-6 text-md-left inset-2 wow {% if loop.index == 1 %}fadeInLeft{% else %}fadeInRight{% endif %}">
+                        <a href="{{ box.boxUrl }}">
+                            <h4 class="text-center">{{ box.heading }}</h4>
+                            <br />
+                            {% if box.uploadImage | length %}
+                                <img src="{{ box.uploadImage.first().getUrl }}" alt="{{ box.heading }}" />
+                            {% endif %}
+                            <h5>{{ box.subHeading }}</h5>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+
+        <!--Info-->
+        <section class="well-md well--inset-2 bg-contrast-variant-2 text-sm-left">
+            <div class="container">
+                <h2 class="text-center">How can we help you?</h2>
+                <div class="row flow-offset-2">
+                    {% for helpBlock in entry.howCanWeHelpYou %}
+                        <div class="col-md-6">
+                            <div class="box-variant-1">
+                                <div class="box-sm">
+                                    {% if helpBlock.icon | length %} 
+                                    <div class="box_left">
+                                        <div class="icon icon-lg icon-primary">
+                                            <img src="{{ helpBlock.icon.first().getUrl }}" alt="{{ helpBlock.heading }}" />
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    <div class="box_cnt inset-1">
+                                        <h5>{{ helpBlock.heading }}</h5>
+                                        {{ helpBlock.text }}
+                                        <a href="{{ helpBlock.learnMoreUrl }}" class="btn btn-default-variant-2 btn-sm" title="{{ helpBlock.heading }}">More Info <span class="fa-plus"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!--END Info-->
+
+    </main>
+{% endblock %}

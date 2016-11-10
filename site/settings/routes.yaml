@@ -1,0 +1,21 @@
+routes:
+  /blog/tags: blog/taxonomies
+  /search: search
+  /users: user/index
+  /users/{username}: user/profile
+  /account: user/account
+  /login: auth/login
+  /register: auth/register
+  /forgot-password: auth/password-forgot
+  /reset-password: auth/password-reset
+collections:
+  blog: '/blog/{year}/{month}/{day}/{slug}'
+  stuff: '/stuff/{slug}'
+  class-of-business: /class-of-business
+taxonomies:
+  tags: '/blog/tags/{slug}'
+  states: /locations
+  carrier-category: /carriers
+  category-class-of-business: /category-class-of-business
+redirect: [ ]
+vanity: [ ]

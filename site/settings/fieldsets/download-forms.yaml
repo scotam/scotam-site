@@ -1,0 +1,18 @@
+title: Download Forms
+create_title: Download Forms
+fields:
+  upload_file:
+    type: assets
+    display: Upload File
+    instructions: Upload "download form"
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: download-forms
+    max_files: "1"
+    width: 50
+  created_date:
+    type: date
+    display: Created Date
+    allow_blank: false
+    allow_time: false
+    earliest_date: January 1, 2015
+    width: 50

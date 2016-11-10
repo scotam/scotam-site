@@ -1,0 +1,30 @@
+title: Business Locations
+fields:
+  address:
+    type: text
+    display: Address
+  phone_number1:
+    type: text
+    display: Phone Number 1
+    width: 50
+  phone_number2:
+    type: text
+    display: Phone Number 2
+    width: 50
+  fax1:
+    type: text
+    display: Fax 1
+    width: 50
+  fax2:
+    type: text
+    display: Fax 2
+    width: 50
+  state:
+    type: taxonomy
+    display: State
+    instructions: Select state
+    max_items: 1
+    sort: name:asc
+    label: '{{ title }} '
+    taxonomy: state
+    mode: panes

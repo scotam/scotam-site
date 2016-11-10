@@ -1,0 +1,165 @@
+<div class="clearfix"></div>
+<section id="ban4">
+	<div class="container">
+		<div class="row"> 
+        <img src="{{ assets:page_banner limit='1' }}{{ url }}{{ /assets:page_banner }}" class="banner-bg img-responsive" alt="{{ title }}" />
+      </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+
+<section id="filter-c">
+	<div class="container">
+		<div class="row">
+        <div class="col-lg-12"> 
+            <form class="form-inline">
+                <div class="form-group">
+                  <label for="email">WHAT WOULD YOU LIKE TO DO ?</label>
+				          <div class="btn-group selectpicker">
+                  {{ you_like_to_do limit="1" }}
+					        <a class="btn btn-primary dropdown-toggle getquote" data-toggle="dropdown" href="#">{{ heading }}<span class="caret"></span></a>
+                  {{ /you_like_to_do }}
+					        <ul class="dropdown-menu">
+                      {{ you_like_to_do }}
+					               <li><a title="{{ heading }}" href="{{ section_url }}" {{ if section_url|contains:http }} target="_blank" {{ /if }}>{{ heading }}</a></li>
+                      {{ /you_like_to_do }}
+					        </ul>
+				        </div>
+                  <button type="submit" class="btn btn-default">OK</button>
+                </div>
+            </form>
+         </div>
+      </div>
+    </div>
+</section>
+ <section id="circles">
+		<div class="container wrap">
+          <div class="row" style="margin:auto;">
+            <ul class="list-inline list-unlisted" id="customer-do">
+              {{ you_like_to_do }}
+                <li class="left round">
+                  <a title="{{ heading }}" href="{{ section_url }}" {{ if section_url|contains:http }} target="_blank" {{ /if }} data-featherlight="#mangatar2"><img src="{{ assets:background_image limit='1' }}{{ url }}{{ /assets:background_image }}" alt="{{ heading }}" /></a>
+  				        <div class="circle-o"><span>{{ heading }}</span></div>
+                </li>
+              {{ /you_like_to_do }}
+            </ul>
+          </div>
+        </div>
+    </section>
+     <div id="boo">.</div>
+  <section id="article1" class="hide-drive" style="display: block;">
+  <section id="c-detail">
+    <div id="fragment-1" class="container ui-tabs-panel">
+      <div class="row c-plr">
+        <h1>instant quote with usli</h1>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pl7">
+            {{ instant_quote_with_usli }}{{ left_text }}{{ /instant_quote_with_usli }}
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pl7">
+                {{ instant_quote_with_usli }}{{ right_text }}{{ /instant_quote_with_usli }}
+          </div>
+                <div class="clearfix"></div>
+                <h2>Class of Business</h2>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl7 cl2">
+            {{ taxonomy:category-class-of-business collection="class-of-business" sort="title|desc" }}
+                <h3 class="pb0">{{ title }}</h3>
+                <ul class="list-unstyled pl30">
+                  {{ collection }}
+                      <li><a href="{{ business_url }}" target="_blank">{{ title }}</a></li>
+                  {{ /collection }}
+                </ul>
+              {{ /taxonomy:category-class-of-business }}
+          </div>
+      </div>
+    </div>
+  </section>
+</section>
+  <section id="article2" class="hide-drive">
+  <section id="c-detail">
+    <div id="download-form" class="container ui-tabs-panel ui-tabs-hide">
+      <div id="filter-form" class="row">
+        <h1>Forms and applications</h1>
+             <div class="col-lg-12"> 
+                    <form action="" method="GET" class="form-inline">
+                      <div class="form-group">
+                        <label for="email">DISPLAY PER PAGE</label>
+                         <div class="btn-group selectpicker">
+                              <a class="btn btn-primary dropdown-toggle getquote" data-toggle="dropdown" href="#">10<span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#quote">20</a></li>
+                                <li><a href="#">50</a></li>
+                                <li><a href="#">100</a></li>
+                              </ul>
+                          </div>
+                          <input type="text" class="form-control" id="keywords" name="keywords" placeholder="SEARCH BY NAME">
+                        <button type="submit" class="btn btn-default">SEARCH</button>
+                      </div>
+                  </form>
+              </div>
+
+              {{ collection:download-forms limit="5" paginate="true" as="posts" sort="created_date:desc" }}
+              <div class="col-lg-12 pt60 prl10">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="w-60" colspan="2">NAME</th>
+                        <th class="w-20">SIZE</th>
+                        <th class="w-20">CREATED</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {{ if no_results }}
+                        <tr><td colspan="4">There are no results.</td></tr>
+                      {{ /if }}
+                      {{ posts scope="post" }}
+                        <tr>
+                          {{ assets:upload_file }}
+                          <td><img src="./assets/img/{{ extension }}.png" ></td>
+                          <td><a href="{{ url }}" target="{{ filename }}" title="{{ filename }}">{{ post:title }}</a></td>
+                          <td>{{ size_kilobytes }} KB</td>
+                          <td>{{ created_date format="m/d/y" }}</td>
+                          {{ /assets:upload_file }}
+                        </tr>
+                      {{ /posts }}
+                  </tbody>
+                </table>
+                </div>
+            </div>
+            {{ paginate }}
+              <div class="col-lg-12 prl10">
+                <div class="w50 indx">
+                  <ul class="list-inline list-unlisted">
+                    <li>{{ current_page }} - {{ total_pages }}</li>
+                    <li>OF</li>
+                    <li>{{ total_items }}</li>
+                  </ul>
+                </div>
+                <div class="w50 text-right numr">
+                  <ul class="list-inline list-unlisted">
+                    {{ if prev_page }}
+                      <li><</li>
+                      <li><a href="{{ prev_page }}">PREVIOUS</a></li>
+                    {{ /if }}
+                    <li>
+                      {{ links:all }} 
+                        {{ if page == current_page }}
+                          <span>{{ page }}</span>
+                        {{ else }}
+                          <a href="{{ url }}">{{ page }}</a>
+                        {{ /if }}
+                      {{ /links:all }} 
+                    </li>
+                    {{ if next_page }}
+                      <li><a href="{{ next_page }}">NEXT</a></li>
+                      <li>></li>
+                    {{ /if }}
+                  </ul>
+                </div>
+              </div>
+            {{ /paginate }}
+          {{ /collection:download-forms }}
+      </div>
+    </div>
+  </section>
+  </section>

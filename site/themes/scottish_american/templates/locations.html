@@ -1,0 +1,147 @@
+<div class="clearfix"></div>
+
+<section id="ban2">
+	<div class="container">
+		<div class="row"> 
+			<img src="{{ assets:page_banner limit='1' }}{{ url }}{{ /assets:page_banner }}" class="banner-bg img-responsive" />
+			<div>
+				<h1><span>ACROSS THE COUNTRY</span>{{ collection from="business-location" }}{{ if index == 1 }}{{ total_results }}{{ /if }}{{ /collection }} CITIES</h1> 
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="clearfix"></div>
+
+<section id="location">
+		<div class="container wrap">
+			<div class="row">
+			<div id="location2">
+				<nav class="mainNav">
+				
+				<p>ALL LOCATIONS 
+					<span>
+						{{ collection from="business-location" }}
+							{{ if index == 1 }}
+								{{ total_results }}
+							{{ /if }}
+						{{ /collection }}
+					</span>
+				</p>
+
+					<ul>
+						{{ taxonomy:state collection="business-location" sort="title|desc" scope="cat" }}
+						  
+						  <!-- <li {{ if first }} class="selected" {{ /if }}> -->
+						  <li>
+
+						  	<a href="#">{{ cat:title }}</a>
+
+						  <ul id="locate">
+
+						    {{ collection }}
+						       <li {{ if index == 1 }}class="active"{{ /if }}>
+							   
+							   <a href="#" data-address="{{ address }}" data-featherlight="#addess-pop-{{ count }}{{ index }}" data-city="{{ title }}" data-state="{{ cat:title }}" data-featherlight-root="#mapia" data-featherlight-close-on-click="anywhere">{{ title }}</a>
+
+				                    <div class="lightbox lightbox-location" id="addess-pop-{{ count }}{{ index }}">
+				                    	<h1>{{ title }}</h1>
+
+				                        <p>{{ address }}</p>
+				                        	
+										{{ if phone_number1 && phone_number2 }}
+
+											<p>Phone: {{ phone_number1 }} 
+													{{ if phone_number2 }} |  {{ phone_number2 }}
+												{{ /if }}
+											</p>
+										{{ /if }}
+
+				                        {{ if fax1 && fax2 }}<p>Fax: {{ fax1 }}  |  {{ if fax2 }}{{ fax2 }}{{ /if }}</p>{{ /if }}
+				                    </div> 
+				            	</li>
+						    {{ /collection }}
+
+						  </ul>
+						{{ /taxonomy:state }}
+					</ul>
+				</nav>
+			</div>
+			<div id="map-container">
+
+				<div id="mapia">
+					<iframe width='100%' height='100%' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src="https://www.google.com/maps/d/embed?mid=1sxq08M2Ddjn_L6J-E86feQHUcck&amp;output=embed"></iframe>
+				</div>
+				
+			</div>
+
+			 
+		</div>
+	</div>
+</section>
+
+<section id="people" style="background-image: url({{ assets:image_of_section_divider }}{{ url }}{{ /assets:image_of_section_divider }});">
+	<div class="container">
+		<div class="row"> 
+			<div> 
+				{{ section_divider_heading }}
+			</div>   
+		</div>
+	</div>
+</section>
+
+<div class="clearfix"></div>
+
+<section id="filter">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<form class="form-inline"> 
+					<div class="form-group">
+						<label for="email">FILTER BY</label>
+						<input type="text" class="form-control" id="city" name="city" placeholder="CITY" value="{{ get:city }}" />
+						<input type="text" class="form-control" id="state" name="state" placeholder="STATE" value="{{ get:state }}" />
+						<button type="button" id="search-people" class="btn btn-default">SEARCH</button>
+					</div>
+				</form>
+			</div>
+      	</div>
+    </div>
+</section>
+
+<section id="mangatar">
+	<div class="container wrap">
+		<div class="row" style="margin:auto;">
+			<ul class="list-inline list-unlisted ul-lightbox-people">
+
+				{{ collection from="employees" }}
+
+					<li class="left round" {{ relate:business_location }}data-city="{{ title }}" data-state="{{ relate:state }} {{ title }} {{ /relate:state }}" {{ /relate:business_location }}>
+
+						<a href="#" data-featherlight="#mangatar{{ index }}">
+							<img src="{{ assets:picture }}{{ url }}{{ /assets:picture }}" alt="{{ title }}" />
+						</a>
+
+						<h4>{{ title }}<span>{{ job }}</span></h4>
+						
+						<div class="lightbox lightbox-people" id="mangatar{{ index }}">
+							<div class="people-L">
+								<img src="{{ assets:picture }}{{ url }}{{ /assets:picture }}" class="round" alt="{{ title }}" />
+							</div>
+							<div class="people-R">
+								<h1>{{ title }}</h1>
+								<h3>{{ job }}</h3>
+								{{ address }}
+								<p>{{ email_address }}</p>
+								<p>{{ phone_number }}</p>
+							</div>
+						</div>
+					</li>
+
+				{{ /collection }}
+
+			</ul>
+		</div>
+	</div>
+</section>
+

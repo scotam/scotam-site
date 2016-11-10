@@ -1,0 +1,12 @@
+{{ collection:business-location paginate="false" filter="TaxonomyFilter" tf_group="states" tf_slug="{ state }" as="locations" show_future="yes" show_past="yes" }}
+    {{ locations }}
+      <li {{ if index == 1 }}class="active"{{ /if }}><a data-address="{{ address }}" href="javascript:void(0);" data-featherlight="#addess-pop-{{ index }}">{{ title }}</a>
+        <div class="lightbox" id="addess-pop-{{ index }}">
+          <h1>{{ title }}</h1>
+          <p>{{ address }}</p>
+          <p>Phone: {{ phone_number1 }}  {{ if phone_number2 }}| {{ phone_number2 }}{{ /if }}</p>
+          <p>Fax: {{ fax1 }} {{ if fax2 }}|  {{ fax2 }}{{ /if }}</p>
+        </div>
+      </li>
+    {{ /locations }}
+{{ /collection:business-location }}

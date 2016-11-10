@@ -1,0 +1,8 @@
+title: Carriers
+hide: true
+fields:
+  area:
+    type: taxonomy
+    display: Area
+    taxonomy: carrier-category
+    mode: tags
