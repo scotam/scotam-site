@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="{{ theme:css src='bootstrap' }}" />
     <link href="{{ theme:css src='mytheme' }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ theme:css src='animate' }}" />
+    <link href="{{ theme:css src='featherlight.min.css' }}" rel="stylesheet" />
     <link rel="icon" href="favicon.ico">
-    <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+    <!--<link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />-->
 </head>
 <body>
 
@@ -29,9 +30,11 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="{{ theme:js src='featherlight.min.js' }}"></script>
   <script type="text/javascript" src="{{ theme:js src='jquery.localscroll.min' }}"></script>
-  <script type="text/javascript" src="{{ theme:js src='jquery.scrollTo.min' }}"></script> 
+  <script type="text/javascript" src="{{ theme:js src='jquery.scrollTo.min' }}"></script>
+  <script type="text/javascript" src="{{ theme:js src='isotope.min.js' }}"></script>
+
 
   <script src="{{ theme:js src='navAccordion.min' }}" type="text/javascript"></script>
   
@@ -39,15 +42,36 @@
 
   <script type="text/javascript">
 
-    $(document).ready(function(){
+    $(document).ready(function() {        
 
-        // var first_addr = $("ul#locate li.active:first").find('a').data('address');
+        var counter = 0;    
 
-        // var embed ="<iframe width='100%' height='100%' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( first_addr ) +"&amp;output=embed'></iframe>";
+        $('.all-locations').click( function (e) {
 
-        // $("div#mapia").html(embed);
+          counter = 0;
 
-        var counter = 0;      
+          var embed = "<iframe width='100%' height='100%' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://www.google.com/maps/d/embed?mid=1sxq08M2Ddjn_L6J-E86feQHUcck&amp;output=embed'></iframe>";
+
+          // if( counter >= 2 ) {
+          //   // $("#mapia").children('.featherlight').first().remove();
+          //   // console.log('here');
+          // }
+
+          // $("#locate > li").each(function(){
+          //   $(this).removeClass('active');
+          // });
+
+          $("#mapia")
+            .children('iframe')
+            .remove() 
+            .end()
+            .children('.featherlight')
+            .remove()           
+            .end()
+            .append(embed);
+
+
+        });  
 
         $("#locate > li > a").click(function(e){
 
@@ -79,13 +103,6 @@
             .end()
             .append(embed);
 
-          // $("#mapia")
-          //   .children('iframe')
-          //   .remove()
-          
-          // .append(embed);
-
-          // $("#mapia").html(embed);
 
           var business_city = $(this).data('city');
           var business_state = $(this).data('state');
@@ -130,7 +147,7 @@
               $("ul.ul-lightbox-people li[data-state='"+ state +"']").show();
             })            
           }          
-        })
+        });
 
         $('#show-carriers-list').click(function() {
           $('#carriers-list').show(500);
@@ -148,20 +165,40 @@
           $('#target').toggle('slow');
         });
 
-      $(".dropdown-menu li a").click(function(){
+      $(".selectOptionsDropDown a").click(function(){
         var selText = $(this).text();
-        $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
-        $('html,body').animate({scrollTop: $("#boo").offset().top}, 'slow');
+
+        $(this).parents('.btn-group').find('.dropdown-toggle').html(selText + ' <span class="caret"></span>');        
+        animateTo();
+
         $(".dropdown-menu li").show();
+
+        // console.log('here');
+
         $(this).parents('li').hide();
       });
 
-      $("ul#customer-do li a").click(function(){
+      var animateTo = function() {
+        $('html,body').animate({ scrollTop: $("#boo").offset().top }, 'slow');
+        // console.log('here');
+      };
+
+      $("#customer-do .circle-o").click(function(){
+
         var selText = $(this).text();
-        $(".dropdown-menu li a").parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
-        $('html,body').animate({scrollTop: $("#boo").offset().top}, 'slow');
-        $(".dropdown-menu li").show();
-        $(this).parents('li').hide();
+
+        // console.log('here');
+
+        $(".selectOptions").find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+
+        animateTo();
+
+        // $('html,body').animate({scrollTop: $("#boo").offset().top}, 'slow');
+
+        // $(".dropdown-menu li").show();
+
+        // $(this).parents('li').hide();
+      
       });      
 
       $('.selectpicker ul li, ul#customer-do li').click(function() {

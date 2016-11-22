@@ -23,10 +23,28 @@
     }
 
     // Local Scroll Init
-    if( $.fn.localScroll ) {        
+    if( $.fn.localScroll ) { 
+        // $.localScroll();
+
         $('#menu2').localScroll({
-            offset: -100,
+            offset: -15,
             hash: true
+        });
+    };
+
+    if( $.fn.isotope ) {
+        var $grid = $('.ul-lightbox-people').isotope({
+        // options
+            // layoutMode: 'fitColumns'    
+        });
+
+        // filter items on button click
+        $('.filter_group').on( 'click', 'a', function(evt) {
+            var filterValue = $(this).attr('data-filter');
+            // console.log(filterValue, 'filterval');
+            $grid.isotope({ filter: filterValue });
+
+            evt.preventDefault();
         });
     }
     

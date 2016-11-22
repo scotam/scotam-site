@@ -1,16 +1,80 @@
 <div class="clearfix"></div>
-<section id="ban2">
-    <div class="container">
-        <div class="row"> 
-            <img src="{{ assets:page_banner limit='1' }}{{ url }}{{ /assets:page_banner }}" class="banner-bg img-responsive" />
-            <div>
-                <h1>{{ title }}</h1> 
+
+<div class="carrers">
+    <div class="title">
+
+        {{ assets:hero_image }}
+            <img src="{{ url }}" alt="{{ alt }}" />
+        {{ /assets:hero_image }}  
+
+        {{ page_titles }}
+            {{ page_sub_title | wrap:h3 }}
+            {{ page_title | wrap:h1 }}
+        {{ /page_titles }}
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    {{ content | widont }}
+                </div>
             </div>
         </div>
-    </div>
-</section>
 
-<div class="clearfix"></div>
+    </div>
+
+    <div class="container">            
+        {{ columns_content }}
+
+            {{ if index % 2 === 0 }}
+                <div class="careers-boxes">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="images">
+                                <p>
+                                    {{ assets:column_image }}
+                                        <img src="{{ url }}" alt="{{ alt }}" />
+                                    {{ /assets:column_image }}     
+                                </p>                       
+                            </div>
+                        </div> 
+                        <div class="col-lg-6">
+                            {{ column_content | markdown }}
+                        </div>
+                    </div>
+                </div>
+
+            {{ else }}
+                <div class="careers-boxes">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            {{ column_content | markdown }}                            
+                        </div> 
+                        <div class="col-lg-6">
+                            <div class="images">
+                                <p>
+                                    {{ assets:column_image }}
+                                        <img src="{{ url }}" alt="{{ alt }}" />
+                                    {{ /assets:column_image }}     
+                                </p>                       
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+
+            {{ /if }}
+        {{ /columns_content }}   
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="information">
+                    {{ contact_information }}
+                </div>
+            </div>
+        </div>         
+    </div>
+
+</div>
+
 
 <section id="mangatar">
     <div class="container wrap">
