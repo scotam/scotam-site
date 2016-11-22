@@ -1,0 +1,21 @@
+title: About Us
+create_title: Title Page
+hide: true
+fields:
+  page_titles:
+    type: array
+    display: Page Titles
+    keys:
+      page_subtitle: Insert Page Subtitle
+      page_title: Insert Page Subtitle
+  page_background:
+    type: assets
+    display: Page Background
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: /
+  content:
+    type: markdown
+    display: Content
+    cheatsheet: false
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: /

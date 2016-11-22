@@ -1,5 +1,5 @@
 page_banner:
-  - 8edf9dd3-1f74-46de-b459-b2114ec96f46
+  - 401bf6af-09e3-43f2-8d3b-0acd04666ebe
 title: Partners
 fieldset: default-page
 id: 5ac0ec37-17ab-4232-9a28-75b5017addd0

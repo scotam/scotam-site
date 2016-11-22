@@ -1,0 +1,43 @@
+title: Careers Page
+create_title: Careers Page Creation
+hide: true
+fields:
+  page_titles:
+    type: array
+    display: Page Titles
+    keys:
+      page_sub_title: Page Sub Title
+      page_title: Page Title
+  hero_image:
+    type: assets
+    display: Hero Image
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: /
+  content:
+    type: markdown
+    display: Content
+    cheatsheet: false
+    container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+    folder: /
+  columns_content:
+    type: grid
+    display: Columns Content
+    fields:
+      column_content:
+        type: markdown
+        display: Column Content
+        instructions: null
+        cheatsheet: false
+        container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+        folder: /
+      column_image:
+        type: assets
+        display: Column Image
+        instructions: null
+        container: 380dc8d9-481c-4d18-9162-ecd5688f98a8
+        folder: /
+        max_files: null
+    mode: table
+  contact_information:
+    type: text
+    display: Contact Information
