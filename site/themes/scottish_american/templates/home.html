@@ -4,7 +4,21 @@
     <div class="row"> 
       <img src="{{ assets:banner_image }}{{ url }}{{ /assets:banner_image }}" class="banner-bg img-responsive" />
       <div id="title" class="slide-f">
-        {{ banner_title }} 
+        {{ banner_title }}
+
+        <h1 class="cd-headline slide">          
+          <span class="cd-words-wrapper">
+            {{ collection:text_slider }} 
+              {{ if first }}
+                <b class="is-visible">{{ title }}</b>
+              {{ else }}
+                <b>{{ title }}</b>
+              {{ /if }}
+              
+            {{ /collection:text_slider }}           
+          </span>
+        </h1>
+        
       </div>   
     </div>
   </div>
