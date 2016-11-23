@@ -176,6 +176,8 @@ section {
   font-size: 160px;
   text-align: center;
   letter-spacing: 2px;
+  font-weight: normal;
+  text-transform: uppercase;
   color: #FFFFFF; }
 
 #ban h1 span.initial_text {
@@ -2828,6 +2830,7 @@ hr {
     font-size: 70px;
     text-align: center;
     letter-spacing: 2px;
+    font-weight: normal;
     color: #FFFFFF; }
 
   #ban {
