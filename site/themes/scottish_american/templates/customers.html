@@ -115,35 +115,40 @@
                     </form>
                 </div>
 
-                {{ collection:download-forms limit="5" paginate="true" as="posts" sort="created_date:desc" }}
-                <div class="col-lg-12 pt60 prl10">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th class="w-60" colspan="2">NAME</th>
-                          <th class="w-20">SIZE</th>
-                          <th class="w-20">CREATED</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {{ if no_results }}
-                          <tr><td colspan="4">There are no results.</td></tr>
-                        {{ /if }}
-                        {{ posts scope="post" }}
+                {{ collection:download-forms limit="25" paginate="true" as="posts" sort="title:asc" }}
+                  <div class="col-lg-12 pt60 prl10">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
                           <tr>
-                            {{ assets:upload_file }}
-                            <td><img src="./assets/img/{{ extension }}.png" ></td>
-                            <td><a href="{{ url }}" target="{{ filename }}" title="{{ filename }}">{{ post:title }}</a></td>
-                            <td>{{ size_kilobytes }} KB</td>
-                            <td>{{ created_date format="m/d/y" }}</td>
-                            {{ /assets:upload_file }}
+                            <th class="w-60" colspan="2">NAME</th>
+                            <th class="w-20">SIZE</th>
+                            <th class="w-20">CREATED</th>
                           </tr>
-                        {{ /posts }}
-                    </tbody>
-                  </table>
-                  </div>
-              </div>
+                        </thead>
+                        <tbody>
+                          
+                          {{ if no_results }}
+                            <tr><td colspan="4">There are no results.</td></tr>
+                          {{ /if }}
+
+                          {{ posts scope="post" }}
+
+                            <tr>
+                              {{ assets:upload_file }}
+                              <td><img src="./assets/img/{{ extension }}.png" ></td>
+                              <td><a href="{{ url }}" target="{{ filename }}" title="{{ filename }}">{{ post:title }}</a></td>
+                              <td>{{ size_kilobytes }} KB</td>
+                              <td>{{ created_date format="m/d/y" }}</td>
+                              {{ /assets:upload_file }}
+                            </tr>
+                            
+                          {{ /posts }}
+
+                      </tbody>
+                    </table>
+                    </div>
+                </div>
               {{ paginate }}
                 <div class="prl10">
 
