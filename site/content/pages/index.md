@@ -1,5 +1,5 @@
 ---
-banner_title: '<h1><span>WE ARE</span> AWESOME</h1> '
+banner_title: '<h1><span class="initial_text">WE ARE</span></h1> '
 banner_image:
   - a6a51305-a25d-443f-9dc4-6b3c2ad49717
 s_title: ' <h1><span>It’s in the</span>SAUCE</h1>'
