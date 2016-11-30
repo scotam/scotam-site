@@ -14,80 +14,77 @@
 <div class="clearfix"></div>
 
 <section id="location">
-		<div class="container wrap">
-			<div class="row">
-				<div class="col-lg-4">
+	<div class="container wrap">
+		<div class="row">
+			<div class="col-lg-4">
 
-					<div id="location2">
-						<nav class="mainNav">
-						
-							<p class="all-locations">ALL LOCATIONS 
-								<span>
-									{{ collection from="business-location" }}
-										{{ if index == 1 }}
-											{{ total_results }}
-										{{ /if }}
-									{{ /collection }}
-								</span>
-							</p>
+				<div id="location2">
+					<nav class="mainNav">
+					
+						<p class="all-locations">ALL LOCATIONS 
+							<span>
+								{{ collection from="business-location" }}
+									{{ if index == 1 }}
+										{{ total_results }}
+									{{ /if }}
+								{{ /collection }}
+							</span>
+						</p>
 
-							<ul>
-								{{ taxonomy:state collection="business-location" sort="title:asc" scope="cat" }}
-								  
-								  <!-- <li {{ if first }} class="selected" {{ /if }}> -->
-								  <li>
+						<ul>
+							{{ taxonomy:state collection="business-location" sort="title:asc" scope="cat" }}
+							  
+							  <!-- <li {{ if first }} class="selected" {{ /if }}> -->
+							  <li>
 
-								  	<a >{{ cat:title }}</a>
+							  	<a >{{ cat:title }}</a>
 
-								  <ul id="locate">
+							  <ul id="locate">
 
-								    {{ collection sort="title:asc"}}
-								       <li {{ if index == 1 }}class="active"{{ /if }}>
-									   
-									   <a href="#" data-address="{{ address }}" data-featherlight="#addess-pop-{{ count }}{{ index }}" data-city="{{ title }}" data-state="{{ cat:title }}" data-featherlight-root="#mapia">
-										   {{ title }}
-										</a>
+							    {{ collection sort="title:asc"}}
+							       <li {{ if index == 1 }}class="active"{{ /if }}>
+								   
+								   <a href="#" data-address="{{ address }}" data-featherlight="#addess-pop-{{ count }}{{ index }}" data-city="{{ title }}" data-state="{{ cat:title }}" data-featherlight-root="#mapia">
+									   {{ title }}
+									</a>
 
-						                    <div class="lightbox lightbox-location" id="addess-pop-{{ count }}{{ index }}">
-											
-												<h2>{{ title | title }}</h2>																													<h2>{{ cat:title }}</h2>					
+					                    <div class="lightbox lightbox-location" id="addess-pop-{{ count }}{{ index }}">
+										
+											<h2>{{ title | title }}</h2>																													<h2>{{ cat:title }}</h2>					
 
-						                        <p>{{ address }}</p>
-						                        	
-												{{ if phone_number1 && phone_number2 }}
+					                        <p>{{ address }}</p>
+					                        	
+											{{ if phone_number1 && phone_number2 }}
 
-													<p>Phone: {{ phone_number1 }} 
-															{{ if phone_number2 }} |  {{ phone_number2 }}
-														{{ /if }}
-													</p>
-												{{ /if }}
+												<p>Phone: {{ phone_number1 }} 
+														{{ if phone_number2 }} |  {{ phone_number2 }}
+													{{ /if }}
+												</p>
+											{{ /if }}
 
-						                        {{ if fax1 && fax2 }}<p>Fax: {{ fax1 }}  |  {{ if fax2 }}{{ fax2 }}{{ /if }}</p>{{ /if }}
-						                    </div> 
-						            	</li>
-								    {{ /collection }}
+					                        {{ if fax1 && fax2 }}<p>Fax: {{ fax1 }}  |  {{ if fax2 }}{{ fax2 }}{{ /if }}</p>{{ /if }}
+					                    </div> 
+					            	</li>
+							    {{ /collection }}
 
-								  </ul>
-								{{ /taxonomy:state }}
-							</ul>
-						</nav>
+							  </ul>
+							{{ /taxonomy:state }}
+						</ul>
+					</nav>
+				</div>
+				
+			</div>
+
+			<div class="col-lg-8">
+				<div id="map-container">
+
+					<div id="mapia">
+						<iframe width='100%' height='100%' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src="https://www.google.com/maps/d/embed?mid=1sxq08M2Ddjn_L6J-E86feQHUcck&amp;output=embed"></iframe>
 					</div>
 					
-				</div>
-
-				<div class="col-lg-8">
-					<div id="map-container">
-
-						<div id="mapia">
-							<iframe width='100%' height='100%' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src="https://www.google.com/maps/d/embed?mid=1sxq08M2Ddjn_L6J-E86feQHUcck&amp;output=embed"></iframe>
-						</div>
-						
-					</div>	
-				</div>
-			
-			
-
-			 
+				</div>	
+			</div>
+						 
 		</div>
 	</div>
 </section>
