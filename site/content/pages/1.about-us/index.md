@@ -4,7 +4,7 @@ page_titles:
   page_title: real talk
 page_background:
   - 519e4498-3c56-4e70-ae5f-746c93eee71e
-title: About Us
+title: 'About Us '
 fieldset: about_us
 template: about-us
 id: b6a0c462-7662-437a-9e15-906c21229af3
@@ -25,4 +25,4 @@ We’ve created more than 100 American jobs. We’re proud to be what America is
 ## Most people don’t fit here
 **It’s not like everywhere else. We aren’t trying to be.**
 
-![image](/assets/Paul-Thompson,-Chief-Gopher.jpg)
+![](/assets/pt-sig.jpg)

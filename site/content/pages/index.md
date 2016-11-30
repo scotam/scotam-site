@@ -57,7 +57,7 @@ list:
   - here
 id: db0ae4e3-4f10-4802-bc40-0b880cbf02c7
 ---
-<p>Scottish American was built on Awesome Sauce, a blend of all the best ingredients that make this company what it is today. From ambitious to zany, all of our employees have the right stuff?</p>
+<p>Scottish American was built on Awesome Sauce, a blend of all the best ingredients that make this company what it is today. From ambitious to zany, all of our employees have the right stuff.</p>
 <p>At Scottish American, you work where you want and when you want. There are no managers, titles, or policies. </p>
 
 <p>We’re based on the idea of ownership - a company built by its employees for its employees.</p>
