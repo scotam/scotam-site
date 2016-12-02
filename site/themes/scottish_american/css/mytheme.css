@@ -755,6 +755,15 @@ section {
 
 /*iphone*/
 @media only screen and (max-width: 1024px) {
+  
+  .accordion-btn.accordion-collapsed {
+    width: 9%!important;
+  }
+
+  .mainNav {
+    margin-bottom: 40px;
+  }
+
   .about-us .title img {
     display: none; }
 
@@ -1271,7 +1280,7 @@ hr {
 #mapia {
   width: 100%;
   height: 607px;
-  float: left;
+  /* float: left; */
   position: relative;
   border: 5px solid #000; }
 
@@ -1327,8 +1336,8 @@ hr {
   vertical-align: middle;
   display: inline-block;
   overflow: auto;
-  padding: 40px 50px 30px !important;
-  border-bottom: 25px solid transparent;
+  padding: 0;
+  border-bottom: 0;
   /*margin-left: 10% !important;
   margin-top: 3% !important;
   margin-right: 0 !important;*/
@@ -1360,15 +1369,44 @@ hr {
   background: transparent !important; }
 
 .featherlight-inner .people-L {
-  width: 235px;
+  width: 286px;
   float: left;
-  margin-right: 40px; }
+  background-color: #f7b538;
+  padding: 20px;
+  padding-top: 40px;
+}
+
+.featherlight-inner .people-L p {
+  font-size: 14px;
+  color:  #fff;
+  font-weight: 500;
+}
 
 .featherlight-inner .people-R {
   float: right;
   margin-top: 60px;
   margin-bottom: 60px;
-  margin-right: 60px; }
+  margin-right: 60px; 
+  margin-left: 40px;
+}
+
+.featherlight-inner .people-R h1 {
+  font-size:  45px;
+  font-weight: 500;
+  font-family: "Impact";
+}
+
+.featherlight-inner .people-R h3 {
+  font-size: 20px;
+  color:  #edae05;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.featherlight-inner .people-R p {
+  color:  #000;
+  font-size: 14px;
+}
 
 .map-marker {
   position: absolute;
@@ -1483,7 +1521,7 @@ hr {
   padding-bottom: 0;
   padding-top: 0;
   background-size: cover;
-  margin-top: 45px; }
+  margin-top: 185px; }
 
 #people_bg .banner-bg {
   position: absolute;
@@ -2634,7 +2672,14 @@ hr {
     float: none !important; }
 
   .navbar-toggle {
-    display: block; }
+    display: block; 
+    background-color: #2780c4;
+    margin-top: 25px;
+  }
+
+  .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #2780c4;
+  }
 
   .navbar-collapse {
     border-top: 0px solid transparent;
@@ -2702,10 +2747,10 @@ hr {
     vertical-align: middle;
     display: inline-block;
     overflow: auto;
-    padding: 40px 50px 0 !important;
+    padding: 0;
     border-bottom: 25px solid transparent;
-    margin-left: 0% !important;
-    margin-top: 3% !important;
+    margin-left: 5%;
+    margin-top: 3%;
     margin-right: 5%;
     max-height: 95%;
     background: #fff;
@@ -2716,7 +2761,7 @@ hr {
     box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 0.2); }
 
   .featherlight-inner .people-L {
-    width: 235px;
+    width: 100%;
     float: none;
     margin: auto; }
 
@@ -2828,7 +2873,7 @@ hr {
 
   #ban h1 span b {
     font-family: 'Impact';
-    font-size: 70px;
+    font-size: 110px;
     text-align: center;
     letter-spacing: 2px;
     font-weight: normal;
@@ -3072,7 +3117,7 @@ hr {
     line-height: 24px; } }
 @media only screen and (max-width: 820px) {
   #ban4 {
-    height: 138px;
+    /* height: 138px; */
     background-position: center bottom;
     background-repeat: no-repeat;
     position: relative;
@@ -3492,7 +3537,18 @@ ul li.has-subnav .accordion-btn {
 
 @media screen and (max-width: 768px) {
   .mainNav {
-    width: 50% !important; } }
+    margin-bottom: 40px;
+  } 
+}
+
+@media screen and (max-width: 767px) { 
+  
+  .accordion-btn.accordion-collapsed, .accordion-btn.accordion-expanded {
+    width:  10%!important;
+  }
+
+}
+
 @media screen and (max-width: 550px) {
   .mainNav {
     width: 70% !important;
@@ -3546,11 +3602,20 @@ ul li.has-subnav .accordion-btn {
   bottom: 0;
   left: 0;
   margin: auto;
-  z-index: 2147483647;
+  z-index: 99;
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
   background: #333;
   background: transparent; }
+
+  #map-container .featherlight-content {
+    padding: 40px 50px 30px !important;
+    border-bottom:  25px solid transparent;
+  }
+
+  .text-center {
+    text-align: center!important;
+  }
 
 /*# sourceMappingURL=mytheme.css.map */

@@ -27,7 +27,7 @@
         // $.localScroll();
 
         $('#menu2').localScroll({
-            offset: -15,
+            offset: -75,
             hash: true
         });
     };
