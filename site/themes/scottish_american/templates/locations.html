@@ -41,14 +41,14 @@
 
 							  <ul id="locate">
 
-							    {{ collection sort="title:asc"}}
+							    {{ collection sort="title:asc"}}							    	
 							       <li {{ if index == 1 }}class="active"{{ /if }}>
 								   
-								   <a href="#" data-address="{{ address }}" data-featherlight="#addess-pop-{{ count }}{{ index }}" data-city="{{ title }}" data-state="{{ cat:title }}" data-featherlight-root="#mapia">
+								   <a href="#" data-address="{{ address }}" data-featherlight="#addess-pop-{{ title | dashify }}-{{ count }}{{ index }}" data-city="{{ title }}" data-state="{{ cat:title }}" data-featherlight-root="#mapia">
 									   {{ title }}
 									</a>
 
-					                    <div class="lightbox lightbox-location" id="addess-pop-{{ count }}{{ index }}">
+					                    <div class="lightbox lightbox-location" id="addess-pop-{{ title | dashify }}-{{ count }}{{ index }}">
 										
 											<h2>{{ title | title }}</h2>																													<h2>{{ cat:title }}</h2>					
 
@@ -89,9 +89,9 @@
 	</div>
 </section>
 
-<div id="people">
+<!-- <div id="people">
 	&nbsp;
-</div>
+</div> -->
 
 <section id="people_bg" style="background-image: url({{ assets:image_of_section_divider }}{{ url }}{{ /assets:image_of_section_divider }});">
 	<div class="container">
@@ -129,7 +129,7 @@
 									{{ taxonomy:state collection="business-location" sort="title:asc" scope="cat" }}
 										{{ collection sort="title:asc"}}
 											<li>
-												<a href="#" data-filter=".{{ title }}">{{ title }}</a>
+												<a href="#" data-filter=".{{ title | dashify}}">{{ title }}</a>
 											</li>
 										{{ /collection }}
 									{{ /taxonomy:state }}
@@ -146,7 +146,7 @@
 								<ul class="dropdown-menu filter_group">
 									{{ taxonomy:state collection="business-location" sort="title:asc" scope="cat" }}								
 										<li>
-											<a href="#" data-filter=".{{ cat:title }}">{{ cat:title }}</a>
+											<a href="#" data-filter=".{{ cat:title | dashify }}">{{ cat:title }}</a>
 										</li>
 									{{ /taxonomy:state }}
 								</ul>
@@ -175,7 +175,7 @@
 
 					<!--<li class="left round" {{ relate:business_location }} data-city="{{ title }}" data-state="{{ relate:state }} {{ title }} {{ /relate:state }}" {{ /relate:business_location }}>-->
 
-					<li class="left round {{ relate:business_location }} {{ title }} {{ relate:state }} {{ title }} {{ /relate:state }} {{ /relate:business_location }}">					
+					<li class="left round {{ relate:business_location }} {{ title | dashify }} {{ relate:state }} {{ title | dashify }} {{ /relate:state }} {{ /relate:business_location }}">					
 					
 
 						<a href="#" data-featherlight="#mangatar{{ index }}">
@@ -186,16 +186,22 @@
 						
 						<div class="lightbox lightbox-people" id="mangatar{{ index }}">
 							<div class="people-L">
-								<img src="{{ assets:picture }}{{ url }}{{ /assets:picture }}" class="round" alt="{{ title }}" />
+								<p class="text-center">									
+									<img src="{{ assets:picture }}{{ url }}{{ /assets:picture }}" class="img-circle " alt="{{ title }}" />
+								</p>
+
+								<p>{{ address }}</p>
+								<p>{{ email_address }}</p>
+								<p>{{ phone_number }}</p>
+								
 							</div>
 							<div class="people-R">
 								<h1>{{ title }}</h1>
 								<h3>{{ job }}</h3>
-								<p>{{ address }}</p>
-								<p>{{ email_address }}</p>
-								<p>{{ phone_number }}</p>
+								<p>{{ biography }}</p>
 							</div>
-						</div>
+						</div> <!-- lightbox-people -->
+
 					</li>
 
 				{{ /collection }}
