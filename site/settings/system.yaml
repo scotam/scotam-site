@@ -1,9 +1,9 @@
-license_key: ""
+license_key: "f4c23fd0-70f4-4073-b4ab-9c3e65686509"
 locales:
   en:
     full: en_US
     name: English
-    url: https://scottishamerican.usefinch.us
+    url: http://scottishamerican.dev/
 timezone: UTC
 date_format: F jS, Y
 default_extension: md

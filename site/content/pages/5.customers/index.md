@@ -32,7 +32,7 @@ instant_quote_with_usli:
       <p>Online quotes available 24/7
       </p>
       <p>Log in to USLI or select a class<br> of business.<br><br>
-      <a href="#" class="btn btn-success btn-log">Log in to USLI</a>
+      <a href="https://secure.usli.com/RetailQuote/RetailLogin.aspx" class="btn btn-success btn-log">Log in to USLI</a>
       </p>
 title: Customers
 fieldset: customers
